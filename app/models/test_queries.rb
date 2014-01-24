@@ -2,6 +2,8 @@ require_relative '../../db/config'
 require_relative 'congress_member'
 require_relative 'state'
 require_relative 'political_party'
+require_relative 'representative'
+require_relative 'political_party'
 
 #congress_member = CongressMember.new({name: "Charlie Truong", phone: "123-1234-123"})
 #congress_member.save!
@@ -54,4 +56,6 @@ end
 #congress_member_by_state("LA")
 #print_gender_data("M")
 #total_count
-active_congress_members_by_state
+#active_congress_members_by_state
+Representative.add_congress_member
+Senator.add_congress_member
