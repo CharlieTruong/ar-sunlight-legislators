@@ -1,6 +1,7 @@
 require 'rake'
 require 'rspec/core/rake_task'
 require_relative 'db/config'
+require_relative 'lib/legislators_importer'
 
 
 desc "create the database"
@@ -25,6 +26,11 @@ end
 desc 'Retrieves the current schema version number'
 task "db:version" do
   puts "Current version: #{ActiveRecord::Migrator.current_version}"
+end
+
+desc "populate the test database with sample data"
+task "db:populate" do
+  LegislatorsImporter.import
 end
 
 desc "Run the specs"
