@@ -3,7 +3,11 @@ require_relative 'congress_member'
 require_relative 'state'
 require_relative 'political_party'
 require_relative 'representative'
+require_relative 'senator'
 require_relative 'political_party'
+require_relative 'legislator'
+require_relative 'congress_tweet'
+require 'twitter'
 
 #congress_member = CongressMember.new({name: "Charlie Truong", phone: "123-1234-123"})
 #congress_member.save!
@@ -53,9 +57,25 @@ def total_count
 	puts "Representatives: #{CongressMember.where('title = ?','Rep').count}"
 end
 
+
+
+
 #congress_member_by_state("LA")
 #print_gender_data("M")
 #total_count
 #active_congress_members_by_state
-Representative.add_congress_member
-Senator.add_congress_member
+
+# Legislator.transfer_state_data
+# Legislator.transfer_political_party
+# Legislator.transfer_congress_member
+# # Legislator.add_in_office_congress_member
+# Representative.add_existing_congress_member
+# Senator.add_existing_congress_member
+# p Representative.all.count
+# p Senator.all.count
+
+# CongressMember.limit(10).each do |congress_member|
+# 	CongressTweet.populate_from_twitter_id(congress_member)
+# end
+
+p CongressTweet.all.first.congress_member
