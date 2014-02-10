@@ -10,8 +10,8 @@ class CongressTweet < ActiveRecord::Base
 
   def self.populate_from_twitter_id(congress_member)
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key    = "11PK316F79aH5J51NjWQrw"
-      config.consumer_secret = "seAYf1X4mvK1V40g6OJmYlVrU2xjTtlvnOWh7MnBM"
+      config.consumer_key    = ""
+      config.consumer_secret = ""
     end
     begin
       client.user_timeline(congress_member.twitter_id).shift(10).each do |tweet|
